@@ -9,7 +9,6 @@ To accomplish the storage and [potential] comparrison logic of people with their
 ## File Structure
   ```
   FriendFinder
-    - .gitignore
     - app
       - data
         - friends.js
@@ -19,9 +18,6 @@ To accomplish the storage and [potential] comparrison logic of people with their
       - routing
         - apiRoutes.js
         - htmlRoutes.js
-    - node_modules
-    - package.json
-    - server.js
   ```
 
 ## Resources
