@@ -193,6 +193,11 @@
   </div>
 
   <script type="text/javascript">
+    // Maybe matching?
+    var matching;
+    var bestfriends=[];
+    var j=0;
+    var q1;
     // Chosen CSS
     var config = {
       ".chosen-select": {},
@@ -258,6 +263,21 @@
 
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
+            /* 
+                Expected behavior: 
+                    userData object has "scores" key, so bestfriends[j] can hold all the scores for comparison with future friends by index
+                Actual behavior: 
+                    survey:267 Uncaught TypeError: Cannot read property 'push' of undefined
+            
+            for (var i = 0; i < data.scores.length; i++) {
+                bestfriends[j].push(data.scores[i])
+            };
+            j++;
+            if (bestfriends.length>2){
+                console.log(bestfriends);
+                q1 = bestfriends[0][0]-bestfriends[1][1]
+                console.log("compatability 1:",q1)
+            }*/
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
